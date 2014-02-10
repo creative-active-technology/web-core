@@ -10,7 +10,9 @@ import java.io.Serializable;
 
 /**
  *
- * @author Deni Husni FR
+ * @author Deni Husni Fahri Rizal
+ * @version 1
+ * @since 10 February 2014
  */
 public abstract class BaseController implements Serializable{
     
