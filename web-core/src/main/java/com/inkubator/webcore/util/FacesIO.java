@@ -27,7 +27,7 @@ public class FacesIO implements ResourceLoaderAware, InitializingBean {
     private String pathUpload;
     private Integer bufferSize;
     private ResourceLoader resourceLoader;
-    private Resource dataIn;
+    private Resource resource;
 
     public Integer getBufferSize() {
         return bufferSize;
@@ -45,6 +45,16 @@ public class FacesIO implements ResourceLoaderAware, InitializingBean {
         this.pathUpload = pathUpload;
     }
 
+    /**
+     *
+     * <p>
+     * For Transfer File in Upload technic
+     * <p>
+     * The Date format using default active locale.</p>
+     *
+     * @param uploadedFile is primefaces UploadedFile 
+     * @throws java.io.IOException 
+     */
     public void transferFile(UploadedFile uploadedFile) throws IOException {
         File fileHasTransfer = new File(pathUpload, uploadedFile.getFileName());
         InputStream inputStream;
@@ -70,30 +80,30 @@ public class FacesIO implements ResourceLoaderAware, InitializingBean {
     }
 
     public InputStream getInputStreamFromName(String namaFile) throws IOException {
-        dataIn = resourceLoader.getResource("file:" + pathUpload + namaFile);
-        return dataIn.getInputStream();
+        resource = resourceLoader.getResource("file:" + pathUpload + namaFile);
+        return resource.getInputStream();
     }
 
     public InputStream getInputStreamFromURL(String url) throws IOException {
-        dataIn = resourceLoader.getResource("file:" + url);
-        return dataIn.getInputStream();
+        resource = resourceLoader.getResource("file:" + url);
+        return resource.getInputStream();
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
         if (pathUpload.equalsIgnoreCase("") || pathUpload == null) {
             throw new Exception("Mr. DHFR say :Property of pathUpload can't be null. "
-                    + "Please see and config web_util.properties");
+                    + "Please see and config web_core.properties");
         }
 
         if (bufferSize == null || bufferSize == 0) {
             throw new Exception("Mr. DHFR say :Property of bufferSize can't be null or zero. "
-                    + "Please see and config web_util.properties");
+                    + "Please see and config web_core.properties");
 
         }
         if (resourceLoader == null) {
             throw new Exception("Mr. DHFR say :Property of resourceLoader can't be null "
-                    + "Please see and spring web config or config web_util.properties");
+                    + "Please see and spring web config or config web_core.properties");
 
         }
     }
