@@ -101,10 +101,10 @@ public class FacesIO implements ResourceLoaderAware, InitializingBean {
                     + "Please see and config web_core.properties");
 
         }
-        if (resourceLoader == null) {
-            throw new Exception("Mr. DHFR say :Property of resourceLoader can't be null "
-                    + "Please see and spring web config or config web_core.properties");
-
-        }
+//        if (resourceLoader == null) {
+//            throw new Exception("Mr. DHFR say :Property of resourceLoader can't be null "
+//                    + "Please see and spring web config or config web_core.properties");
+//
+//        }
     }
 }

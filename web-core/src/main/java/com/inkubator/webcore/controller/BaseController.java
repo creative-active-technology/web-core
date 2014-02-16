@@ -7,6 +7,7 @@
 package com.inkubator.webcore.controller;
 
 import java.io.Serializable;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -15,5 +16,6 @@ import java.io.Serializable;
  * @since 10 February 2014
  */
 public abstract class BaseController implements Serializable{
+     protected transient Logger logger = Logger.getLogger(getClass());
     
 }
