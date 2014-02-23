@@ -37,5 +37,8 @@ public abstract class BaseController implements Serializable {
         FacesUtil.getFacesContext().getViewRoot().setLocale(new Locale(bahasa));
         
     }
+     public String doClose() {
+        return "home";
+    }
 
 }
