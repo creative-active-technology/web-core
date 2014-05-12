@@ -4,7 +4,7 @@
 
     <groupId>com.inkubator</groupId>
     <artifactId>web-core</artifactId>
-    <version>1.0.0.RELEASE</version>
+    <version>1.1.0.RELEASE</version>
     <packaging>jar</packaging>
 
     <name>web-core</name>
@@ -24,7 +24,7 @@
     </build>
     <properties>
         <mojarra-version>2.1.28</mojarra-version>
-        <primefaces-version>4.0.12</primefaces-version>
+        <primefaces-version>4.0.13</primefaces-version>
         <springfaces-version>2.3.2.RELEASE</springfaces-version>
         <springframework-version>3.2.6.RELEASE</springframework-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -130,7 +130,7 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>com.inkubator</groupId>
+            <groupId>com.incubator</groupId>
             <artifactId>common-util</artifactId>
             <version>1.0.0.RELEASE</version>
             <exclusions>
