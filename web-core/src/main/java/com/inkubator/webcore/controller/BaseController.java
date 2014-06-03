@@ -5,11 +5,15 @@
  */
 package com.inkubator.webcore.controller;
 
+import com.inkubator.webcore.WebCoreConstant;
 import com.inkubator.webcore.util.FacesUtil;
+import com.inkubator.webcore.util.MessagesResourceUtil;
 import java.io.Serializable;
 import java.util.Locale;
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import org.apache.log4j.Logger;
+import org.primefaces.event.SelectEvent;
 
 /**
  *
@@ -33,12 +37,26 @@ public abstract class BaseController implements Serializable {
     @PostConstruct
     public void initialization() {
         LOGGER.info("Base Controlller Execute");
-        bahasa = (String) FacesUtil.getSessionAttribute("bahasa_active");
+        bahasa = (String) FacesUtil.getSessionAttribute(WebCoreConstant.BAHASA_ACTIVE);
         FacesUtil.getFacesContext().getViewRoot().setLocale(new Locale(bahasa));
-        
+
     }
-     public String doClose() {
+
+    public String doClose() {
         return "home";
+    }
+
+    public void onDialogReturn(SelectEvent event) {
+        String condition = (String) event.getObject();
+        if (condition.equalsIgnoreCase(WebCoreConstant.SAVE_CONDITION)) {
+            MessagesResourceUtil.setMessages(FacesMessage.SEVERITY_INFO, "global.save_info", "global.added_successfully",
+                    FacesUtil.getSessionAttribute(WebCoreConstant.BAHASA_ACTIVE).toString());
+        }
+        if (condition.equalsIgnoreCase(WebCoreConstant.UPDATE_CONDITION)) {
+            MessagesResourceUtil.setMessages(FacesMessage.SEVERITY_INFO, "global.save_info", "global.update_successfully",
+                    FacesUtil.getSessionAttribute(WebCoreConstant.BAHASA_ACTIVE).toString());
+        }
+
     }
 
 }
