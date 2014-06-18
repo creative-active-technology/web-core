@@ -39,6 +39,7 @@ public abstract class BaseController implements Serializable {
         LOGGER.info("Base Controlller Execute");
         bahasa = (String) FacesUtil.getSessionAttribute(WebCoreConstant.BAHASA_ACTIVE);
         FacesUtil.getFacesContext().getViewRoot().setLocale(new Locale(bahasa));
+        
 
     }
 
