@@ -44,7 +44,7 @@ public abstract class BaseController implements Serializable {
     }
 
     public String doClose() {
-        return "home";
+       return "/protected/home.htm?faces-redirect=true";
     }
 
     public void onDialogReturn(SelectEvent event) {
