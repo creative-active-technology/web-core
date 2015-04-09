@@ -19,19 +19,19 @@ import javax.faces.application.FacesMessage;
 public class MessagesResourceUtil {
 
     public static void setMessages(FacesMessage.Severity severity, String titleErros, String key, String locale) {
-        ResourceBundle messages = ResourceBundle.getBundle("messages", new Locale(locale));
+        ResourceBundle messages = ResourceBundle.getBundle("Messages", new Locale(locale));
         FacesMessage msg = new FacesMessage(severity, messages.getString(titleErros), messages.getString(key));
         FacesUtil.getFacesContext().addMessage(null, msg);
     }
 
     public static void setMessagesFromException(FacesMessage.Severity severity, String titleErros, String contentError, String locale) {
-        ResourceBundle messages = ResourceBundle.getBundle("messages", new Locale(locale));
+        ResourceBundle messages = ResourceBundle.getBundle("Messages", new Locale(locale));
         FacesMessage msg = new FacesMessage(severity, messages.getString(titleErros), contentError);
         FacesUtil.getFacesContext().addMessage(null, msg);
     }
 
     public static void setMessagesFlas(FacesMessage.Severity severity, String titleErros, String key, String locale) {
-        ResourceBundle messages = ResourceBundle.getBundle("messages", new Locale(locale));
+        ResourceBundle messages = ResourceBundle.getBundle("Messages", new Locale(locale));
         FacesMessage msg = new FacesMessage(severity, messages.getString(titleErros), messages.getString(key));
         FacesUtil.getFacesContext().addMessage(null, msg);
         FacesUtil.getExternalContext().getFlash().setKeepMessages(true);
