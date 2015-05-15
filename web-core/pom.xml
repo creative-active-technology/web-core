@@ -4,7 +4,7 @@
 
     <groupId>com.inkubator</groupId>
     <artifactId>web-core</artifactId>
-    <version>1.2.0.RELEASE</version>
+    <version>2.0.0.RELEASE</version>
     <packaging>jar</packaging>
 
     <name>web-core</name>
@@ -23,8 +23,8 @@
         </plugins>
     </build>
     <properties>
-        <mojarra-version>2.1.29</mojarra-version>
-        <primefaces-version>4.0.24</primefaces-version>
+        <mojarra-version>2.2.8</mojarra-version>
+        <primefaces-version>5.2</primefaces-version>
         <springfaces-version>2.3.4.RELEASE</springfaces-version>
         <springframework-version>3.2.6.RELEASE</springframework-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,13 +34,13 @@
         <dependency>
             <groupId>org.atmosphere</groupId>
             <artifactId>atmosphere-runtime</artifactId>
-            <version>2.1.5</version>
+            <version>2.3.1</version>
         </dependency>
-<!--        <dependency>
+        <dependency>
             <groupId>org.atmosphere</groupId>
             <artifactId>atmosphere-annotations</artifactId>
-            <version>2.1.5</version>
-        </dependency>-->
+            <version>2.3.1</version>
+        </dependency>
         <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache-web</artifactId>
@@ -49,13 +49,18 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
-            <version>6.0</version>
+            <version>7.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
         </dependency>
         <dependency>
             <groupId>taglibs</groupId>
@@ -85,12 +90,12 @@
         <dependency>
             <groupId>org.primefaces.extensions</groupId>
             <artifactId>primefaces-extensions</artifactId>
-            <version>1.2.1</version>
+            <version>3.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.omnifaces</groupId>
             <artifactId>omnifaces</artifactId>
-            <version>1.8.1</version>
+            <version>1.10</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.webflow</groupId>
