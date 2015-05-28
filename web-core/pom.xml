@@ -23,7 +23,7 @@
         </plugins>
     </build>
     <properties>
-        <mojarra-version>2.2.8</mojarra-version>
+        <mojarra-version>2.2.10</mojarra-version>
         <primefaces-version>5.2</primefaces-version>
         <springfaces-version>2.3.4.RELEASE</springfaces-version>
         <springframework-version>3.2.6.RELEASE</springframework-version>
@@ -31,6 +31,11 @@
     </properties>
 
     <dependencies>
+<!--        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.faces</artifactId>
+            <version>2.2.8</version>
+        </dependency>-->
         <dependency>
             <groupId>org.atmosphere</groupId>
             <artifactId>atmosphere-runtime</artifactId>
